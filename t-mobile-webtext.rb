@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby 
+#!/usr/bin/env ruby
 
 require 'rubygems'
 require 'hpricot'
@@ -6,7 +6,7 @@ require 'cgi'
 
 
 # Arguments
-unless ARGV.count == 4
+unless ARGV.length == 4
   puts "Usage: t-mobile-webtext.rb username password recipient message"
   exit 1
 end
@@ -64,7 +64,7 @@ html = curl('https://www.t-mobile.co.uk/service/your-account/login/', [
 
 # Get the send-message page and extract the token from the send-message form
 html = curl('https://www.t-mobile.co.uk/service/your-account/private/wgt/send-text-preparing/', [
-  ['cookie', COOKIE_JAR]  
+  ['cookie', COOKIE_JAR]
 ])
 doc = Hpricot(html)
 token_element = doc.at("input[@name='org.apache.struts.taglib.html.TOKEN']")
