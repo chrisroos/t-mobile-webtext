@@ -1,0 +1,7 @@
+Introduction
+============
+I recently discovered the Webtext functionality available on the t-mobile.co.uk website.  It's great but I don't want to have to keep logging into the website to send messages.  I've written this little script so that I can send text messages from the command line.
+
+Usage
+=====
+$ ruby t-mobile-webtext.rb username password recipient message
